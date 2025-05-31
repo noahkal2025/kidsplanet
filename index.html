@@ -19,7 +19,7 @@
     />
     <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="canonical" href="https://kidsplanetuganda.com/" />
+    <link rel="canonical" href="https://www.kidsplanetuganda.com/index.html" />
 
     <!-- OpenGraph Meta Tags for Social Sharing -->
     <!-- Home Section -->
@@ -116,6 +116,20 @@
       name="google-site-verification"
       content="3AZx2XiOiukt4uSdsSx2lx4AGEsB_dykyrv9CtsBu_I"
     />
+    <meta
+      http-equiv="refresh"
+      content="0; url=https://www.kidsplanetuganda.com/"
+    />
+
+    <script>
+      // Redirect to the new canonical URL if not already there
+      if (
+        window.location.hostname === 'kidsplanetuganda.com' &&
+        !window.location.href.includes('www.kidsplanetuganda.com')
+      ) {
+        window.location.replace('https://www.kidsplanetuganda.com/index.html');
+      }
+    </script>
   </head>
   <body>
     <header class="header-left">
@@ -1085,6 +1099,15 @@
       </div>
     </footer>
 
+    <script>
+      // Redirect to the new canonical URL if not already there
+      if (
+        window.location.hostname === 'kidsplanetuganda.com' &&
+        !window.location.href.includes('www.kidsplanetuganda.com')
+      ) {
+        window.location.replace('https://www.kidsplanetuganda.com/index.html');
+      }
+    </script>
     <script>
       // Gallery Lightbox Functionality
       const lightbox = document.getElementById('lightbox');
