@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
     <script>
-        const newUrl = "https://kidsplanetuganda.com/" + window.location.pathname;
-        if (window.location.hostname === "www.kidsplanetuganda.com" || window.location.protocol === "http:") {
-            window.location.href = newUrl;
+        // Redirect ALL problem URLs
+        if (window.location.pathname.includes('index.html') {
+            window.location.href = window.location.href.replace('index.html', '');
         }
+        // Optional: Add your custom 404 content below
     </script>
 </head>
 <body>
-    <p>If you are not redirected, <a href="https://kidsplanetuganda.com/">click here</a>.</p>
+    <!-- Your normal 404 page content -->
 </body>
 </html>
