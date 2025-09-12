@@ -136,19 +136,65 @@ header {
   transition: transform 0.3s ease;
 }
 
+.phone-number {
+  color: navy;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Nunito', Arial, sans-serif;
+  transition: color 0.2s;
+}
+
+.phone-number:hover {
+  color: #001a4d !important;
+}
+
 /* ============== NAVIGATION STYLES ============== */
 .logo-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
-  background-color: rgb(220, 7, 124);
-  width: 100%;
-  padding: 10px 20px;
+  background: rgb(220, 7, 124);
+  padding: 0.7em 1.5em;
+  position: relative;
 }
 
 .logo {
-  height: 150px;
+  height: 56px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(220,7,124,0.15);
+}
+
+.logo-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background: rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 0.3em 1em 0.3em 0.7em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(220,7,124,0.10);
+  transition: background 0.2s;
+}
+
+.logo-contact:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.logo-contact .phone-number {
+  color: navy;
+  /* If you want a specific navy shade, use: color: #001f4d; */
+}
+
+.phone-icon {
+  color: #fff;
+  font-size: 1.2em;
+  margin-right: 0.2em;
+  background: #e91e63;
+  border-radius: 50%;
+  padding: 0.25em 0.4em;
+  box-shadow: 0 1px 4px rgba(220,7,124,0.18);
 }
 
 .navbar {
@@ -1437,6 +1483,123 @@ section[id] {
   .container .box {
     width: calc(50% - 10px);
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.7em 0.7em;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .logo-contact {
+    font-size: 1em;
+    padding: 0.2em 0.7em 0.2em 0.5em;
+    gap: 0.3em;
+  }
+
+  .phone-icon {
+    font-size: 1em;
+    padding: 0.18em 0.3em;
+  }
+
+  .logo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: rgb(220, 7, 124) !important; /* Match large screen menu color for logo/menu area */
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .logo-section .logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 1em;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  .hamburger .bar {
+    width: 28px;
+    height: 4px;
+    background: #fff !important; /* Make hamburger icon bars white on small screens */
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.08);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 1050;
+    border-radius: 0 0 0 12px;
+    padding: 1em 0;
+    display: block;
+  }
+  .navbar.active {
+    transform: translateX(0);
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .navbar li {
+    margin: 0.5em 0;
+    text-align: right;
+    padding-right: 1.5em;
+  }
+  .navbar a {
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .navbar a.current-page,
+  .navbar a:hover {
+    background: #e91e63;
+    color: #fff;
+  }
+  .content-wrapper {
+    margin-top: 70px;
   }
 }
 

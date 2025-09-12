@@ -118,23 +118,6 @@
     />
   </head>
   <body>
-    <header class="header-left">
-      <h1>
-        <span class="big-text">Kids' Planet Kinder</span>
-        <span class="small-text">and Day Care Center</span>
-        <span class="big-text pink-text">Kazo Uganda</span>
-      </h1>
-      <div class="contact-info">
-        <p>Phone: <a href="tel:+256740941232">(+256) 740941232</a></p>
-        <p>
-          Email:
-          <a href="mailto:info@kidsplanet.com" target="_blank"
-            >kidsplanetkinder@gmail.com</a
-          >
-        </p>
-      </div>
-    </header>
-
     <section class="logo-section">
       <img
         src="logo.png"
@@ -149,6 +132,15 @@
         title="Fallback Image for Kids Planet Logo Kawempe"
         hidden
       />
+      <div class="logo-contact">
+        <span class="phone-icon"><i class="fas fa-phone"></i></span>
+        <a href="tel:+256740941232" class="phone-number">(+256) 740941232</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <nav class="navbar">
         <ul>
           <li><a href="#home" class="current-page">Home</a></li>
@@ -165,14 +157,15 @@
       <!-- Home Section -->
       <section id="home">
         <div class="welcome-section">
-          <h2 class="welcome-heading">Welcome to Kids'Planet Kinder</h2>
+          <h2 class="welcome-heading">
+            Welcome to Kids'Planet Kinder Kazo Lugoba Uganda
+          </h2>
           <h3 class="welcome-description">
             At Kids'Planet Kinder and Daycare, we nurture young minds with a
             Cambridge curriculum and Christian values, creating a loving,
             inclusive environment where every child can grow, learn, and shine.
           </h3>
         </div>
-        p
         <div class="full-width-image">
           <img
             src="main-background-image.webp"
@@ -1190,6 +1183,31 @@
           document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
           });
+        });
+      });
+
+      // Hamburger menu functionality
+      const hamburger = document.querySelector('.hamburger');
+      const navbar = document.querySelector('.navbar');
+      const navLinks = document.querySelectorAll('.navbar a');
+
+      function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navbar.classList.toggle('active');
+        hamburger.setAttribute(
+          'aria-expanded',
+          hamburger.classList.contains('active')
+        );
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 900) {
+            hamburger.classList.remove('active');
+            navbar.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
         });
       });
     </script>
