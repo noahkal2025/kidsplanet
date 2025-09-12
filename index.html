@@ -158,7 +158,7 @@
       <section id="home">
         <div class="welcome-section">
           <h2 class="welcome-heading">
-            Welcome to Kids'Planet Kinder Kazo Lugoba Uganda
+            Welcome to Kids'Planet Kinder & Day Care Kazo Lugoba Uganda
           </h2>
           <h3 class="welcome-description">
             At Kids'Planet Kinder and Daycare, we nurture young minds with a
@@ -288,11 +288,11 @@
               title="Principal of Kids Planet Cambridge Nursery Kawempe"
             />
             <p>
-              Welcome to Kids' Planet Kinder and Day Care Center! Our school is
-              a place where children are encouraged to explore, learn, and grow
-              in a safe and nurturing environment. We believe in the potential
-              of every child and are committed to providing the best education
-              and care possible. We offer the Cambridge Curriculum to create a
+              We Are Kids' Planet Kinder and Day Care Center! Our school is a
+              place where children are encouraged to explore, learn, and grow in
+              a safe and nurturing environment. We believe in the potential of
+              every child and are committed to providing the best education and
+              care possible. We offer the Cambridge Curriculum to create a
               bright future for your child. We look forward to partnering with
               you on this exciting journey.<br /><br />
               Warm regards,<br />
@@ -618,8 +618,8 @@
           <h2>About Us</h2>
           <div class="about-us-content">
             <p>
-              Welcome to Kids'Planet Kinder and Daycare Center, where little
-              stars shine bright! Located in Logoba II, we offer the globally
+              We Are Kids'Planet Kinder and Daycare Center, where little stars
+              shine bright! Located in Logoba II, we offer the globally
               recognized Cambridge Curriculum, blending top-notch education with
               a sprinkle of fun. As a Christian-founded institution, we warmly
               welcome families of all faiths—because love, kindness, and crayons
@@ -1046,6 +1046,60 @@
         <img class="modal-content" id="modalImage" />
         <div id="caption"></div>
       </div>
+
+      <!-- Modal for Day in Our School -->
+      <div
+        id="dayImageModal"
+        class="modal"
+        style="
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.8);
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <span
+          id="dayImageModalClose"
+          style="
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+          "
+          >&times;</span
+        >
+        <img
+          id="dayModalImage"
+          src=""
+          alt=""
+          style="
+            max-width: 90vw;
+            max-height: 80vh;
+            display: block;
+            margin: auto;
+            border-radius: 1em;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+          "
+        />
+        <div
+          id="dayModalCaption"
+          style="
+            color: #fff;
+            text-align: center;
+            margin-top: 1em;
+            font-size: 1.1em;
+          "
+        ></div>
+      </div>
     </div>
 
     <footer class="footer">
@@ -1126,6 +1180,39 @@
         const modal = document.getElementById('imageModal');
         modal.style.display = 'none';
       }
+
+      // Day in Our School image modal functionality
+      function openDayImageModal(image) {
+        const modal = document.getElementById('dayImageModal');
+        const modalImg = document.getElementById('dayModalImage');
+        const caption = document.getElementById('dayModalCaption');
+        modal.style.display = 'block';
+        modalImg.src = image.src;
+        caption.textContent = image.alt;
+      }
+
+      function closeDayImageModal() {
+        document.getElementById('dayImageModal').style.display = 'none';
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Make day-in-school images clickable
+        document
+          .querySelectorAll('.day-in-school .schedule-item img')
+          .forEach(function (img) {
+            img.style.cursor = 'pointer';
+            img.onclick = function () {
+              openDayImageModal(this);
+            };
+          });
+        // Exit modal on tap anywhere or exit button
+        const modal = document.getElementById('dayImageModal');
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeDayImageModal();
+        });
+        document.getElementById('dayImageModalClose').onclick =
+          closeDayImageModal;
+      });
 
       // Highlight active section in navbar
       window.addEventListener('scroll', highlightCurrentSection);
