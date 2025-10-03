@@ -169,12 +169,43 @@
             inclusive environment where every child can grow, learn, and shine.
           </h3>
         </div>
-        <div class="full-width-image">
-          <img
-            src="main-background-image.webp"
-            alt="Kids Planet Cambridge Nursery Kawempe Background"
-            title="Kids Planet Cambridge Nursery Kawempe Background"
-          />
+        <div class="full-width-image slideshow-container">
+          <div class="slide fade">
+            <img
+              src="main-background-image.webp"
+              alt="Kids Planet Cambridge Nursery Kawempe Background"
+              title="Kids Planet Cambridge Nursery Kawempe Background"
+            />
+          </div>
+          <div class="slide fade">
+            <img
+              src="IMG1.webp"
+              alt="Kids Planet Slide 1"
+              title="Kids Planet Slide 1"
+            />
+          </div>
+          <div class="slide fade">
+            <img
+              src="IMG2.webp"
+              alt="Kids Planet Slide 2"
+              title="Kids Planet Slide 2"
+            />
+          </div>
+          <div class="slide fade">
+            <img
+              src="IMG3.webp"
+              alt="Kids Planet Slide 3"
+              title="Kids Planet Slide 3"
+            />
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <div class="slideshow-dots" style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
         </div>
 
         <!-- Social Media Icons Section -->
@@ -822,10 +853,7 @@
             <h3>General Information</h3>
             <div class="faq-item">
               <strong>Where is Kids'Planet Kinder located?</strong>
-              <p>
-                We are located in Kawempe Lugoba, Uganda. Our address is [Insert
-                Full Address Here].
-              </p>
+              <p>We are located in Kawempe Lugoba, Uganda.</p>
             </div>
             <div class="faq-item">
               <strong>Do you offer transportation services?</strong>
@@ -837,8 +865,8 @@
             <div class="faq-item">
               <strong>What age groups do you cater to?</strong>
               <p>
-                We cater to children aged 2 to 6 years, providing a nurturing
-                environment for early childhood education.
+                We cater for children from age 1 to kindergarten years,
+                providing a nurturing environment for early childhood education.
               </p>
             </div>
             <div class="faq-item">
@@ -855,7 +883,7 @@
             <div class="faq-item">
               <strong>What are your operating hours?</strong>
               <p>
-                We are open Monday to Friday from 7:30 AM to 5:00 PM. We are
+                We are open Monday to Friday from 7:30 AM to 6:00 PM. We are
                 closed on weekends and public holidays.
               </p>
             </div>
@@ -1137,6 +1165,65 @@
     </footer>
 
     <script>
+      // Slideshow functionality
+      let slideIndex = 1;
+      let slides, dots;
+      let slideInterval;
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+        resetInterval();
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+        resetInterval();
+      }
+
+      function showSlides(n) {
+        if (!slides) return;
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        slides.forEach((slide, i) => {
+          slide.style.display = i === slideIndex - 1 ? 'block' : 'none';
+        });
+        if (dots) {
+          dots.forEach((dot, i) => {
+            dot.className = dot.className.replace(' active', '');
+            if (i === slideIndex - 1) dot.className += ' active';
+          });
+        }
+        // Remove any accidental focus from slideshow controls
+        if (
+          document.activeElement &&
+          (document.activeElement.classList.contains('prev') ||
+            document.activeElement.classList.contains('next') ||
+            document.activeElement.classList.contains('dot'))
+        ) {
+          document.activeElement.blur();
+        }
+      }
+
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(function () {
+          plusSlides(1);
+        }, 3000);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        slides = document.querySelectorAll('.slideshow-container .slide');
+        dots = document.querySelectorAll('.slideshow-container .dot');
+        showSlides(slideIndex);
+        slideInterval = setInterval(function () {
+          plusSlides(1);
+        }, 3000);
+      });
+
       // Gallery Lightbox Functionality
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.querySelector('.lightbox-image');
