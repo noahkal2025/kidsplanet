@@ -169,6 +169,102 @@
             inclusive environment where every child can grow, learn, and shine.
           </h3>
         </div>
+        <!-- New Year 2026 & Admissions Section (Temporary) -->
+        <section id="newyear-admissions" class="newyear-admissions-section">
+          <div id="fireworks-container" class="fireworks-container"></div>
+          <div
+            id="admissions-content"
+            class="admissions-content"
+            style="display: none"
+          >
+            <h2 class="newyear-heading">
+              🎉 Welcome to <span class="year-2026">2026</span>! 🎉
+            </h2>
+            <h1 class="admissions-title">
+              Admissions for 2026 Intake
+              <span class="admissions-open">ARE OPEN!</span>
+            </h1>
+            <div class="admissions-curriculum">
+              <img
+                src="schoolfees.webp"
+                alt="Kids Planet Cambridge Curriculum Fees"
+                class="admissions-image"
+                id="admissions-fees-image"
+                style="cursor: zoom-in"
+                onclick="openAdmissionsImageModal()"
+              />
+              <div class="admissions-info">
+                <h3>Why Choose Kids'Planet Kinder?</h3>
+                <ul>
+                  <li>
+                    <strong>Cambridge Curriculum:</strong> Internationally
+                    recognized, child-centered, and values-based education.
+                  </li>
+                  <li>
+                    <strong>Christian & Inclusive:</strong> We nurture every
+                    child in a loving, faith-friendly environment.
+                  </li>
+                  <li>
+                    <strong>Small Class Sizes:</strong> Personalized attention
+                    for every learner.
+                  </li>
+                  <li>
+                    <strong>Safe & Supportive:</strong> Secure campus, caring
+                    staff, and a focus on holistic growth.
+                  </li>
+                </ul>
+                <p class="admissions-highlight">
+                  Give your child a head start in 2026—<strong
+                    >Enroll Now!</strong
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Modal for Enlarged Admissions Image -->
+        <div
+          id="admissionsImageModal"
+          class="modal"
+          style="display: none; z-index: 10000"
+        >
+          <span
+            class="close"
+            id="admissionsImageModalClose"
+            style="
+              position: absolute;
+              top: 20px;
+              right: 35px;
+              color: white;
+              font-size: 40px;
+              font-weight: bold;
+              cursor: pointer;
+            "
+            >&times;</span
+          >
+          <img
+            class="modal-content"
+            id="admissionsModalImage"
+            style="
+              max-width: 90vw;
+              max-height: 80vh;
+              display: block;
+              margin: auto;
+              border-radius: 1em;
+              box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+            "
+          />
+          <div
+            id="admissionsModalCaption"
+            style="
+              color: #fff;
+              text-align: center;
+              margin-top: 1em;
+              font-size: 1.1em;
+            "
+          ></div>
+        </div>
+        <!-- End New Year 2026 & Admissions Section -->
         <div class="full-width-image slideshow-container">
           <div class="slide fade">
             <img
@@ -1387,6 +1483,197 @@
           }
         });
       });
+
+      // ========== Fireworks Animation for New Year 2026 (Temporary Section) ==========
+      (function () {
+        const FIREWORKS_KEY = 'fireworks2026_shown';
+        const FIREWORKS_DURATION = 3200; // ms
+        const now = Date.now();
+        const lastShown = parseInt(
+          localStorage.getItem(FIREWORKS_KEY) || '0',
+          10
+        );
+        const oneDay = 24 * 60 * 60 * 1000;
+        const showFireworks = !lastShown || now - lastShown > oneDay;
+        const fireworksContainer = document.getElementById(
+          'fireworks-container'
+        );
+        const admissionsContent = document.getElementById('admissions-content');
+
+        function createFirework(x, y, color) {
+          const fw = document.createElement('div');
+          fw.className = 'firework';
+          fw.style.left = x + '%';
+          fw.style.top = y + '%';
+          fw.style.borderColor = color;
+          fireworksContainer.appendChild(fw);
+          setTimeout(() => fw.remove(), 1800);
+        }
+
+        function randomColor() {
+          const colors = [
+            '#fbbf24',
+            '#d72660',
+            '#0d47a1',
+            '#43a047',
+            '#ff9800',
+            '#fff'
+          ];
+          return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function launchFireworks() {
+          for (let i = 0; i < 7; i++) {
+            setTimeout(() => {
+              for (let j = 0; j < 3 + Math.floor(Math.random() * 3); j++) {
+                createFirework(
+                  10 + Math.random() * 80,
+                  20 + Math.random() * 40,
+                  randomColor()
+                );
+              }
+            }, i * 350);
+          }
+        }
+
+        if (fireworksContainer && admissionsContent) {
+          if (showFireworks) {
+            admissionsContent.style.display = 'none';
+            fireworksContainer.style.display = 'block';
+            launchFireworks();
+            setTimeout(() => {
+              fireworksContainer.style.display = 'none';
+              admissionsContent.style.display = 'block';
+              localStorage.setItem(FIREWORKS_KEY, String(Date.now()));
+            }, FIREWORKS_DURATION);
+          } else {
+            fireworksContainer.style.display = 'none';
+            admissionsContent.style.display = 'block';
+          }
+        }
+      })();
+      // Firework CSS (injected for this section only)
+      (function () {
+        if (document.getElementById('fireworks-css')) return;
+        const style = document.createElement('style');
+        style.id = 'fireworks-css';
+        style.innerHTML = `
+          .firework {
+            position: absolute;
+            width: 0.7em;
+            height: 0.7em;
+            border-radius: 50%;
+            border: 0.18em solid #fff;
+            opacity: 0.85;
+            pointer-events: none;
+            animation: firework-burst 1.2s cubic-bezier(.7,-0.2,.5,1.5) forwards;
+            z-index: 100;
+          }
+          @keyframes firework-burst {
+            0% { opacity: 0.7; transform: scale(0.5); }
+            60% { opacity: 1; transform: scale(2.5); }
+            100% { opacity: 0; transform: scale(3.5); }
+          }
+        `;
+        document.head.appendChild(style);
+      })();
+
+      // Modal functionality for Admissions Image
+      function openAdmissionsImageModal() {
+        const modal = document.getElementById('admissionsImageModal');
+        const modalImg = document.getElementById('admissionsModalImage');
+        const caption = document.getElementById('admissionsModalCaption');
+        const img = document.getElementById('admissions-fees-image');
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        caption.textContent = img.alt;
+      }
+      function closeAdmissionsImageModal() {
+        document.getElementById('admissionsImageModal').style.display = 'none';
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('admissionsImageModal');
+        const closeBtn = document.getElementById('admissionsImageModalClose');
+        if (modal && closeBtn) {
+          closeBtn.onclick = closeAdmissionsImageModal;
+          modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeAdmissionsImageModal();
+          });
+        }
+      });
+
+      // ========== New Year Snow/Sparkle Effect (3 seconds) ==========
+      (function () {
+        const SNOW_DURATION = 3000;
+        const now = new Date();
+        const start = new Date('2026-01-01T00:00:00');
+        const end = new Date('2026-04-01T00:00:00');
+        // Remove the section after 3 months
+        if (now >= end) {
+          var section = document.getElementById('newyear-admissions');
+          if (section) section.parentNode.removeChild(section);
+          var modal = document.getElementById('admissionsImageModal');
+          if (modal) modal.parentNode.removeChild(modal);
+          // Also remove any related script/CSS if needed
+          return;
+        }
+        // Only show snow/sparkle on first load (not after 3 months)
+        if (now >= start && now < end) {
+          var snowContainer = document.createElement('div');
+          snowContainer.id = 'snow-sparkle-container';
+          snowContainer.style.position = 'fixed';
+          snowContainer.style.left = 0;
+          snowContainer.style.top = 0;
+          snowContainer.style.width = '100vw';
+          snowContainer.style.height = '100vh';
+          snowContainer.style.pointerEvents = 'none';
+          snowContainer.style.zIndex = 99999;
+          document.body.appendChild(snowContainer);
+          // Create snow/sparkle particles
+          for (let i = 0; i < 60; i++) {
+            let snow = document.createElement('div');
+            snow.className = 'snow-spark';
+            snow.style.left = Math.random() * 100 + 'vw';
+            snow.style.animationDelay = Math.random() * 2 + 's';
+            snowContainer.appendChild(snow);
+          }
+          setTimeout(function () {
+            snowContainer.remove();
+          }, SNOW_DURATION);
+        }
+      })();
     </script>
+    <style>
+      .snow-spark {
+        position: absolute;
+        top: -2vh;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #fff 60%,
+          #fbbf24 100%,
+          transparent 100%
+        );
+        opacity: 0.85;
+        pointer-events: none;
+        animation: snow-fall 2.8s linear forwards;
+        box-shadow: 0 0 8px 2px #fff8, 0 0 2px #fbbf24;
+      }
+      @keyframes snow-fall {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.9;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) scale(0.7);
+          opacity: 0;
+        }
+      }
+    </style>
   </body>
 </html>
