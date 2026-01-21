@@ -120,7 +120,7 @@ header {
   transition: color 0.3s ease;
 }
 
-.contact-info a:hover {
+contact-info a:hover {
   color: #ff6b6b;
 }
 
@@ -2045,5 +2045,145 @@ section[id] {
   .admissions-image {
     width: 90vw;
     max-width: 98vw;
+  }
+}
+
+/* ===== Special Learning Needs Intake Section (Temporary, Removable) ===== */
+.special-needs-intake-section {
+  background: linear-gradient(135deg, #e3f6fd 0%, #eafaf1 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.07);
+  margin: 2.5rem auto 2.5rem auto;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 1100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.special-needs-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.special-needs-title {
+  color: #1976d2;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.5px;
+}
+.special-needs-intro {
+  color: #388e3c;
+  background: #fff;
+  border-radius: 1em;
+  padding: 1.2em 1.5em;
+  font-size: 1.15em;
+  max-width: 700px;
+  margin: 0 auto 1.5em auto;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+}
+.special-needs-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+.special-needs-support {
+  flex: 1 1 320px;
+  min-width: 260px;
+  max-width: 480px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 1em;
+  padding: 1.5em 1.2em 1.2em 1.2em;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+  text-align: left;
+}
+.special-needs-support h3 {
+  color: #1976d2;
+  font-size: 1.15em;
+  margin: 1.1em 0 0.5em 0;
+}
+.special-needs-bullets, .special-needs-approach {
+  list-style: disc inside;
+  color: #333;
+  font-size: 1.08em;
+  margin: 0 0 1em 0.7em;
+  padding: 0 0 0 0.5em;
+}
+.special-needs-bullets li, .special-needs-approach li {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+.special-needs-trust {
+  color: #1976d2;
+  background: #e3f6fd;
+  border-left: 4px solid #388e3c;
+  border-radius: 0.5em;
+  font-size: 1.08em;
+  font-weight: 600;
+  margin: 1.2em 0 1.5em 0;
+  padding: 0.8em 1em;
+  box-shadow: 0 1px 6px rgba(44, 62, 80, 0.03);
+}
+.special-needs-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, #1976d2 60%, #43a047 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  border-radius: 2em;
+  padding: 0.7em 2.2em;
+  margin-top: 0.7em;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+.special-needs-cta:hover {
+  background: linear-gradient(90deg, #43a047 60%, #1976d2 100%);
+  transform: scale(1.04);
+}
+.special-needs-image-wrap {
+  flex: 1 1 320px;
+  min-width: 220px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.special-needs-image {
+  width: 100%;
+  max-width: 370px;
+  border-radius: 1.2em;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+  background: #fff;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .special-needs-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .special-needs-support, .special-needs-image-wrap {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 1em 0.5em;
+  }
+  .special-needs-image {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .special-needs-intake-section {
+    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+  }
+  .special-needs-title {
+    font-size: 1.3rem;
+  }
+  .special-needs-intro {
+    font-size: 1em;
+    padding: 0.7em 0.3em;
   }
 }
