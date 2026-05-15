@@ -1,0 +1,32 @@
+:root {
+  --kp-white: #ffffff;
+  --kp-background: rgb(247, 247, 247);
+  --kp-surface: #f9f9f9;
+  --kp-surface-strong: #f5f5f5;
+  --kp-cream: #f0f8ff;
+  --kp-snow: #f5f5f5;
+  --kp-sand: #f9f9f9;
+  --kp-saffron: #f1c40f;
+  --kp-midblue: #3498db;
+  --kp-navy: #001a4d;
+  --kp-cobalt: #2980b9;
+  --kp-primary: #080b44;
+  --kp-accent: rgb(185, 47, 70);
+  --kp-highlight: #556b2f;
+  --kp-positive: #e91e63;
+  --kp-charcoal: #333333;
+  --kp-rail: rgba(128, 128, 0, 0.1);
+  --kp-soft: #e6f7ff;
+  --kp-shadow: 0 24px 80px rgba(8, 11, 68, 0.12);
+  --kp-radius: 1.25rem;
+  --kp-radius-sm: 0.85rem;
+  --kp-container: min(1180px, calc(100% - 3rem));
+  --kp-focus: #2980b9;
+  --kp-transition: 240ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
