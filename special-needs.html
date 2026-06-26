@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="components.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -142,7 +143,7 @@
     <header class="kp-header" role="banner">
       <div class="kp-topbar">
         <a
-          href="index.html#home"
+          href="index.html"
           class="kp-brand"
           aria-label="Kids Planet Uganda Home"
         >
@@ -184,10 +185,16 @@
         id="kp-primary-navigation"
       >
         <ul class="kp-nav-list">
-          <li><a class="kp-nav-link" href="index.html#home">Home</a></li>
+          <li><a class="kp-nav-link" href="index.html">Home</a></li>
+          <li>
+            <a class="kp-nav-link" href="about.html">About Kids Planet</a>
+          </li>
           <li><a class="kp-nav-link" href="admissions.html">Admissions</a></li>
-          <li><a class="kp-nav-link" href="programs.html">Programs</a></li>
-          <li><a class="kp-nav-link" href="about.html">About</a></li>
+          <li>
+            <a class="kp-nav-link" href="programs.html"
+              >Cambridge Curriculum &amp; Programs</a
+            >
+          </li>
           <li>
             <a class="kp-nav-link" href="special-needs.html"
               >Inclusive Learning</a
@@ -199,14 +206,14 @@
     </header>
     <main class="kp-main">
       <section class="kp-section kp-hero kp-section-solid" id="inclusive-intro">
-        <div class="kp-section-header">
+        <div class="kp-section-header inclusive-hero-header">
           <span class="kp-eyebrow">Inclusive Learning</span>
           <h1 class="kp-section-title">
             Inclusive Preschool for Mainstream Learners and Children with
             Special Learning Needs
           </h1>
         </div>
-        <div class="kp-about-copy">
+        <div class="kp-about-copy inclusive-hero-copy">
           <p>
             At Kids Planet Uganda, we believe every child belongs. Our inclusive
             preschool in Kampala welcomes mainstream learners and children with
@@ -443,6 +450,34 @@
         </div>
       </section>
     </main>
+    <section
+      class="kp-section kp-feature-section"
+      aria-labelledby="site-pages-heading"
+    >
+      <div class="kp-section-header">
+        <h2 id="site-pages-heading" class="kp-section-title">
+          Explore Our Dedicated Pages
+        </h2>
+      </div>
+      <div class="kp-about-copy">
+        <p>
+          Need a quick next step? <a href="about.html">Learn More</a> about our
+          story, <a href="programs.html">Read About Our Curriculum</a>,
+          <a href="admissions.html">Apply for Admission</a>, or
+          <a href="contact.html">Contact Us</a>.
+        </p>
+        <ul class="kp-list-reset kp-checklist">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Kids Planet</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li>
+            <a href="programs.html">Cambridge Curriculum &amp; Programs</a>
+          </li>
+          <li><a href="special-needs.html">Inclusive Learning</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </section>
     <footer class="kp-footer">
       <div class="kp-footer-copy">
         <p>
@@ -452,6 +487,14 @@
         <p>
           Designed and Developed by <a href="#">kaliAngle Technologies</a> |
           Contact: 0740941232
+        </p>
+        <p>
+          <a href="index.html">Home</a> |
+          <a href="about.html">About Kids Planet</a> |
+          <a href="admissions.html">Admissions</a> |
+          <a href="programs.html">Cambridge Curriculum &amp; Programs</a> |
+          <a href="special-needs.html">Inclusive Learning</a> |
+          <a href="contact.html">Contact</a>
         </p>
       </div>
     </footer>

@@ -19,10 +19,18 @@
   color: var(--kp-navy);
 }
 
+body:not(.kp-home-page) .kp-brand-name {
+  color: var(--kp-white);
+}
+
 .kp-brand-subtitle {
   display: block;
   font-size: 0.85rem;
   color: var(--kp-cobalt);
+}
+
+body:not(.kp-home-page) .kp-brand-subtitle {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .kp-header-actions {
@@ -43,6 +51,12 @@
   font-weight: 600;
 }
 
+body:not(.kp-home-page) .kp-pill {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--kp-white);
+}
+
 .kp-pill-phone i {
   width: 1.05rem;
 }
@@ -57,6 +71,10 @@
   transition: transform var(--kp-transition), background-color var(--kp-transition);
 }
 
+body:not(.kp-home-page) .kp-nav-toggle {
+  background: rgba(255, 255, 255, 0.16);
+}
+
 .kp-nav-toggle span,
 .kp-nav-toggle span::before,
 .kp-nav-toggle span::after {
@@ -66,6 +84,12 @@
   border-radius: 999px;
   background: var(--kp-navy);
   position: relative;
+}
+
+body:not(.kp-home-page) .kp-nav-toggle span,
+body:not(.kp-home-page) .kp-nav-toggle span::before,
+body:not(.kp-home-page) .kp-nav-toggle span::after {
+  background: var(--kp-white);
 }
 
 .kp-nav-toggle span::before,
@@ -104,10 +128,20 @@
   transition: background-color var(--kp-transition), color var(--kp-transition);
 }
 
+body:not(.kp-home-page) .kp-nav-link {
+  color: var(--kp-white);
+}
+
 .kp-nav-link:hover,
 .kp-nav-link:focus-visible {
   background: rgba(185, 47, 70, 0.14);
   color: var(--kp-primary);
+}
+
+body:not(.kp-home-page) .kp-nav-link:hover,
+body:not(.kp-home-page) .kp-nav-link:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--kp-white);
 }
 
 .kp-nav-link-active {

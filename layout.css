@@ -19,6 +19,11 @@
   box-shadow: 0 14px 40px rgba(8, 11, 68, 0.08);
 }
 
+body:not(.kp-home-page) .kp-header {
+  background: linear-gradient(135deg, var(--kp-navy), var(--kp-primary));
+  box-shadow: 0 14px 40px rgba(8, 11, 68, 0.22);
+}
+
 .kp-topbar,
 .kp-section-header,
 .kp-contact-grid,

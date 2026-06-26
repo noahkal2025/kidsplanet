@@ -50,6 +50,60 @@ a:hover {
   color: #e74c3c;
 }
 
+.about-story-hero-copy,
+.admissions-hero-copy,
+.programs-hero-copy,
+.inclusive-hero-copy,
+.contact-hero-copy {
+  color: #ffffff !important;
+}
+
+.about-story-hero-copy h1,
+.about-story-hero-copy h2,
+.about-story-hero-copy h3,
+.about-story-hero-copy p,
+.about-story-hero-copy span,
+.about-story-hero-copy a,
+.admissions-hero-copy h1,
+.admissions-hero-copy h2,
+.admissions-hero-copy h3,
+.admissions-hero-copy p,
+.admissions-hero-copy span,
+.admissions-hero-copy a,
+.programs-hero-copy h1,
+.programs-hero-copy h2,
+.programs-hero-copy h3,
+.programs-hero-copy p,
+.programs-hero-copy span,
+.programs-hero-copy a,
+.inclusive-hero-copy h1,
+.inclusive-hero-copy h2,
+.inclusive-hero-copy h3,
+.inclusive-hero-copy p,
+.inclusive-hero-copy span,
+.inclusive-hero-copy a,
+.contact-hero-copy h1,
+.contact-hero-copy h2,
+.contact-hero-copy h3,
+.contact-hero-copy p,
+.contact-hero-copy span,
+.contact-hero-copy a {
+  color: #ffffff !important;
+}
+
+.about-hero-header .kp-eyebrow,
+.about-hero-header .kp-section-title,
+.admissions-hero-header .kp-eyebrow,
+.admissions-hero-header .kp-section-title,
+.programs-hero-header .kp-eyebrow,
+.programs-hero-header .kp-section-title,
+.inclusive-hero-header .kp-eyebrow,
+.inclusive-hero-header .kp-section-title,
+.contact-hero-header .kp-eyebrow,
+.contact-hero-header .kp-section-title {
+  color: #ffffff !important;
+}
+
 button, .get-directions-button {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
