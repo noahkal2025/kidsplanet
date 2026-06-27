@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kidsplanetuganda.com/sitemap.xml
+Sitemap: https://www.kidsplanetuganda.com/sitemap.xml
